@@ -1,13 +1,21 @@
 package com.example.autowireddemo;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
+@ContextConfiguration(classes = TestClass1.class)
 class AutowiredDemoApplicationTests {
+
+	@Autowired
+	private TestClass1 testClass1;
 
 	@Test
 	void contextLoads() {
+		testClass1.display();
 	}
 
 }
